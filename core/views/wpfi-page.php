@@ -18,8 +18,7 @@
   <div class="box-content">
     <p>آموزش نصب تصویری فونت و اعمال تنظیمات. ( به زودی نصب سایر فونت ها و تنظیمات روی الب های مختلف ارائه می شود).</p>
     <p>لطفا باگ ها را گزارش دهید: <strong>caduspro@gmail.com</strong></p>
-    
-    <div id="15123104359291351"><script type="text/JavaScript" src="https://www.aparat.com/embed/6Yrgb?data[rnddiv]=15123104359291351&data[responsive]=yes"></script></div>
+  <div style="margin-bottom: 100px;margin-top: 100px;" ><iframe style="width: 100%;" width="789" height="383" src="https://www.youtube.com/embed/sw2JaYiUTkw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> 
     
   </div>
 </section>

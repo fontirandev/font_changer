@@ -1,4 +1,4 @@
-﻿=== FontIran Change Font ===
+﻿=== FontIran Font Changer ===
 author: mahdimehri
 Contributors: mahdimehri
 Donate link: https://fontiran.com/
@@ -13,7 +13,8 @@ Website font change plugin
 
 
 == Description ==
-نصب فونت و مدیریت آسان تایپوگرافی سایت
+فونت دلخواه خود را روی قالب وردپرس نصب کنید.
+Install custom font on WordPress template
 
 
 == Installation ==
@@ -45,4 +46,3 @@ change web font for any theme
 
 
 == Upgrade Notice ==
-

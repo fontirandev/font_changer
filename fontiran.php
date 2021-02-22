@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name:       FontIran Change Font
- * Plugin URI:        https://fontiran.com/
+ * Plugin Name:       فونت ایران
+ * Plugin URI:        http://caduspro.net/
  * Description:       نصب فونت و مدیریت آسان تایپوگرافی سایت
  * Version:           2.1
- * Author:            mahdimehri
- * Author URI:        https://mahdimehri.com/
+ * Author:            Cadus Pro
+ * Author URI:        http://caduspro.net/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -95,7 +95,7 @@ if ( ! class_exists( 'WP_Fontiran' ) ) {
 			if ( is_admin() ) {
 				$this->admin = new Fontiran_Admin();	
 			} else {
-				add_action('wp_head',array($this,'fi_enqueue_style'),999);
+				add_action('wp_head',array($this,'fi_enqueue_style'),99999);
 			}
 			
 			

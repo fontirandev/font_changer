@@ -103,7 +103,8 @@ class Fontiran_Upload_Page extends WP_Fontiran_Admin_Page {
 			
 		$this->file = $_FILES["package_file"];
 		$this->post = $_POST['fn'];
-		
+		$file = sanitize_file_name($file);
+		$post = sanitize_file_name($post);
 		
 		// set information
 		$this->set_information();

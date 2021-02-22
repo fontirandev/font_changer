@@ -118,6 +118,23 @@ class Fontiran_Manager_Page extends WP_Fontiran_Admin_Page {
 		
 			
 		$change = $_POST['fi_ops'];
+		
+		function sanitize_text_or_array_field($change) {
+			if( is_string($change) ){
+				$change = sanitize_text_field($change);
+			}elseif( is_array($change) ){
+				foreach ( $change as $key => &$value ) {
+					if ( is_array( $value ) ) {
+						$value = sanitize_text_or_array_field($value);
+					}
+					else {
+						$value = sanitize_text_field( $value );
+					}
+				}
+			}
+		
+			return $change;
+		}
 
 		if( is_array($change) ) {
 			$change = array_values($change);
@@ -145,12 +162,12 @@ class Fontiran_Manager_Page extends WP_Fontiran_Admin_Page {
 			if($op['stat']) {
 				
 			  $subject = (isset($op['subject'])) ? $op['subject'] : null;
-			  $name = (isset($op['font'])) ? 'font-family:'. $op['font'].';' : null;
-			  $st = (isset($op['size_type'])) ? $op['size_type'] : 'px';	
-			  $size = (isset($op['size']) ) ? 'font-size:'. $op['size']. $st.  ';' : null;
-			  $weight = (isset($op['weight'])) ? 'font-weight:' . $op['weight']. ';' : null;
-			  $style = (isset($op['style'])) ? 'font-style:'. $op['style']. ';' : null;
-			  $color = (isset($op['color'])) ? 'color:'. $op['color'].';' : null;	
+			  $name = (isset($op['font'])) ? 'font-family:'. $op['font'].' !important;' : null;
+			  $st = (isset($op['size_type'])) ? $op['size_type'] : 'px' ;	
+			  $size = (isset($op['size']) ) ? 'font-size:'. $op['size']. $st.  ' !important;' : null;
+			  $weight = (isset($op['weight'])) ? 'font-weight:' . $op['weight']. ' !important;' : null;
+			  $style = (isset($op['style'])) ? 'font-style:'. $op['style']. ' !important;' : null;
+			  $color = (isset($op['color'])) ? 'color:'. $op['color'].' !important;' : null;	
 			  
 			  if(!$size && !$weight && !$style && !$color && !$name) {
 				  // display error
@@ -165,7 +182,10 @@ class Fontiran_Manager_Page extends WP_Fontiran_Admin_Page {
 		
 		
 		if(trim($css) != '') {
-			if(!file_put_contents(FIRAN_PATH . 'fontiran_front.css', $css)) {
+			$uploads = wp_upload_dir();
+			
+			if(!wp_enqueue_style( 'fontiran_front', FIRAN_PATH. 'fontiran_front.css', $css  )) {
+			// if(!file_put_contents(FIRAN_PATH . 'fontiran_front.css', $css)) {
 				$this->set_notices( array('type'=>'error', 'ms'=> $this->messages['failed_file']) );	
 			}
 		} else {

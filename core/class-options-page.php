@@ -32,8 +32,9 @@ class Fontiran_Options_Page extends WP_Fontiran_Admin_Page {
 
 	
 	public function check_change_data() {
-		
-		if(isset($_POST['fi_reset']))  {
+		$fi_reset =$_POST['fi_reset']; 
+		$fi_reset=sanitize_html_class($fi_reset);
+		if(isset($fi_reset))  {
 			
 			if (!isset($_POST['fiwp_nonce']) || !wp_verify_nonce($_POST['fiwp_nonce'], 'fiwp'))
 				return $this->set_notices( array('type'=>'error', 'ms'=> 'یک چیزی درست نیست!') );	
