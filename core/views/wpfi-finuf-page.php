@@ -1,10 +1,10 @@
 <?php
 
-if(!file_exists(FIRAN_PATH .'/fonts')) {
-	mkdir(FIRAN_PATH .'/fonts');
+if(!file_exists(FIRAN_DATA .'/fonts')) {
+	mkdir(FIRAN_DATA .'/fonts');
 }
 		
-if(!is_writable(FIRAN_PATH .'/fonts')) { ?>
+if(!is_writable(FIRAN_DATA .'/fonts')) { ?>
  <section id="wphb-box-dashboard-welcome" class="firan-section box-dashboard-welcome">
   <div class="box-content" style="padding:10px 15px 0;direction:ltr;">
 	 <p><?php _e('To upload font packages the', 'fontiran') ?> "<em><?php echo FP_DIR.'/fonts' ?></em>" <?php _e('directory needs to be writtable. <br/>Please check your server permissions.', 'fontiran') ?></p>

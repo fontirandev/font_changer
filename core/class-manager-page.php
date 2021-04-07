@@ -182,16 +182,14 @@ class Fontiran_Manager_Page extends WP_Fontiran_Admin_Page {
 		
 		
 		if(trim($css) != '') {
-			$uploads = wp_upload_dir();
 			
-			if(!wp_enqueue_style( 'fontiran_front', FIRAN_PATH. 'fontiran_front.css', $css  )) {
-			// if(!file_put_contents(FIRAN_PATH . 'fontiran_front.css', $css)) {
+			if(!file_put_contents(FIRAN_DATA . 'fontiran_front.css', $css)) {
 				$this->set_notices( array('type'=>'error', 'ms'=> $this->messages['failed_file']) );	
 			}
 		} else {
 			
-			if(file_exists(FIRAN_PATH  . 'fontiran_front.css'))
-				unlink(FIRAN_PATH . 'fontiran_front.css');
+			if(file_exists(FIRAN_DATA  . 'fontiran_front.css'))
+				unlink(FIRAN_DATA . 'fontiran_front.css');
 			
 			$this->set_notices( array('type'=>'warning', 'ms'=> $this->messages['not_classes']) );
 			

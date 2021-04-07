@@ -21,8 +21,10 @@ if ( ! defined( 'FIRAN_VERSION' ) ) {
 
 
 define( 'FIRAN_URL', plugin_dir_url( __FILE__ ) );
+define( 'FIRAN_DATA_URL', wp_upload_dir()['baseurl'] . '/' );
 define( 'FIRAN_PATH', plugin_dir_path(__FILE__) );
-define( 'FIRAN_FONTS_URL', FIRAN_URL .'fonts' );
+define('FIRAN_DATA', wp_upload_dir()['basedir'] . '/');
+define( 'FIRAN_FONTS_URL', FIRAN_DATA_URL .'fonts' );
 
 
 /**
@@ -106,9 +108,9 @@ if ( ! class_exists( 'WP_Fontiran' ) ) {
 		
 		public function fi_enqueue_style () {
 			
-			if(file_exists(FIRAN_PATH . 'fontiran_front.css')) {
-				wp_enqueue_style("fontiran", FIRAN_URL . 'fontiran.css');
-				wp_enqueue_style("fontiran_fonts", FIRAN_URL . 'fontiran_front.css');
+			if(file_exists(FIRAN_DATA . 'fontiran_front.css')) {
+				wp_enqueue_style("fontiran", FIRAN_DATA_URL . 'fontiran.css');
+				wp_enqueue_style("fontiran_fonts", FIRAN_DATA_URL . 'fontiran_front.css');
 			}
 			
 		}

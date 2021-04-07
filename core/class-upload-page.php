@@ -101,10 +101,10 @@ class Fontiran_Upload_Page extends WP_Fontiran_Admin_Page {
 		}
 			
 			
-		$this->file = $_FILES["package_file"];
-		$this->post = $_POST['fn'];
-		$file = sanitize_file_name($file);
-		$post = sanitize_file_name($post);
+		$this->file = sanitize_file_name($_FILES["package_file"]);
+		$this->post = sanitize_file_name($_POST['fn']);
+		$file = $this->file;
+		$post = $this->post;
 		
 		// set information
 		$this->set_information();
@@ -153,7 +153,7 @@ class Fontiran_Upload_Page extends WP_Fontiran_Admin_Page {
 	public function extracto() {
 		
 		$tmp =  $this->file['tmp_name'];
-		$dir = FIRAN_PATH . 'fonts/' .$this->font['name'];
+		$dir = FIRAN_DATA . 'fonts/' .$this->font['name'];
 		
 		$zip = new ZipArchive;
 		if ($zip->open($tmp) === TRUE) {

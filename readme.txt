@@ -1,6 +1,6 @@
 ﻿=== FontIran Font Changer ===
-author: mahdimehri
-Contributors: mahdimehri
+author: YektaDG
+Contributors: YektaDG
 Donate link: https://fontiran.com/
 Tags: font,manage fonts, webfonts,install fonts,persian fonts,iransans,change fonts,Theme Fonts,fontiran
 Requires at least: 3.3

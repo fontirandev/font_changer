@@ -121,13 +121,13 @@ function fi_create_css($filename = 'fontiran' ,$putdir = null) {
 	 }
 	 
 	if(trim($css) != '') {
-		$uploads = wp_upload_dir();
+		// $uploads = wp_upload_dir();
 			
-		if(!wp_enqueue_style( 'fontiran_front', FIRAN_PATH. 'fontiran_front.css', $css  )) {
-		//if(!file_put_contents(FIRAN_PATH . $filename . '.css', $css)) {
+		// if(!wp_enqueue_style( 'fontiran_front', FIRAN_PATH. 'fontiran_front.css', $css  )) {
+		if(!file_put_contents(FIRAN_DATA . $filename . '.css', $css)) {
 			$error = true;}
 	} else {
-		if(file_exists(FIRAN_PATH  . $filename . '.css'))	{ unlink(FIRAN_PATH. $putdir . $filename . '.css'); }
+		if(file_exists(FIRAN_DATA  . $filename . '.css'))	{ unlink(FIRAN_DATA. $putdir . $filename . '.css'); }
 	}
 	
 }
@@ -138,8 +138,7 @@ function fi_add_rule() {
 	
 	if (!isset($_POST['data']) || empty($_POST['data'])) {die('0');};
 	
-	$n = $_POST['data'];
-	$n= sanitize_html_class($n);
+	$n = sanitize_html_class($_POST['data']);
 ?>
 
 
@@ -253,14 +252,10 @@ function fi_add_rule() {
 // Ajax Delete
 add_action('wp_ajax_fi_delete_webfont', 'fi_delete_webfont_php');
 function fi_delete_webfont_php() {
-	$font_name = $_POST['font_name']; 
-	$font_weight = $_POST['font_weight'];
-	$font_style = $_POST['font_style'];
+	$font_name = sanitize_text_field($_POST['font_name']); 
+	$font_weight = sanitize_text_field( $_POST['font_weight']);
+	$font_style = sanitize_text_field($_POST['font_style']);
 	
-	$font_name = sanitize_text_field($font_name);
-	$font_weight = sanitize_text_field($font_weight);
-	$font_style = sanitize_text_field($font_style);
-
 	$font_list = fi_get_fontlist();
 
 	if(!$font_list) return;
