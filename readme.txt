@@ -1,5 +1,4 @@
-﻿
-=== FontIran Font Changer ===
+﻿=== FontIran Font Changer ===
 author: YektaDG
 Contributors: YektaDG
 Donate link: https://fontiran.com/
