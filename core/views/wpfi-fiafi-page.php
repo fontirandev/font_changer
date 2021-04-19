@@ -18,6 +18,7 @@ wp_enqueue_style("fontiran_prestyle", FIRAN_URL . 'fontiran.css');
          </thead>
          <tbody>
 		  <?php
+		  if(isset($font_list[0])){
 		  for($i=0;$i<count($font_list);$i++) {
 				$font_name = $font_list[$i]['name'];
 			echo '<style type="text/css">#preview_'.$font_name. $i .' {font-family: '.$font_name.'; font-weight: '.$font_list[$i]['weight'].';}</style>';
@@ -30,7 +31,7 @@ wp_enqueue_style("fontiran_prestyle", FIRAN_URL . 'fontiran.css');
            <td class="del"><span class="fi_font_del font-del" id="del_<?php echo $font_name; ?>">زدودن</span></td>
           </tr>
 
-          <?php } ?>
+          <?php } }?>
          </tbody>
         </table>
 

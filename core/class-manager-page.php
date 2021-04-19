@@ -158,7 +158,7 @@ class Fontiran_Manager_Page extends WP_Fontiran_Admin_Page {
 		$css = '';
 		
 		foreach($this->options as $op) {
-			
+			if(!isset($op['stat'])) $op['stat'] = true;
 			if($op['stat']) {
 				
 			  $subject = (isset($op['subject'])) ? $op['subject'] : null;

@@ -21,10 +21,10 @@
 		  $subject = (isset($elm['subject'])) ? $elm['subject'] : null;
 		  $name = (isset($elm['font']) && $elm['font'] !=='0') ? $elm['font'] : '0';
 		  $size = (isset($elm['size']) && $elm['size'] !=='0') ? $elm['size'] : '';
-		  $size_type = ($elm['size_type'] !=='0') ? $elm['size_type'] : 'px';	
+		  $size_type = (isset($elm['size_type'])&&$elm['size_type'] !=='0') ? $elm['size_type'] : 'px';	
 		  $weight = (isset($elm['weight']) && $elm['weight'] !=='0') ? $elm['weight'] : '';
 		  $style = (isset($elm['style']) && $elm['style'] !=='0') ? $elm['style'] : '';
-		  $color = ($elm['color']) ? $elm['color'] : '';
+		  $color = (isset($elm['color'])&&$elm['color']) ? $elm['color'] : '';
 		  $active = ($row <1) ? 'opened' : null;  ?>
     <div class="fi-row-box clearfix <?php echo $active; ?>" data-tab-url="<?php echo $tab; ?>" >
       <input name="fi_ops[<?php echo $tab; ?>][subject]" class="choose_element" value="<?php echo $elm['class']; ?>" type="hidden">
