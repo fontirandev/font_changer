@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name:       فونت ایران
- * Plugin URI:        http://caduspro.net/
+ * Plugin URI:        https://yektadg.ir
  * Description:       نصب فونت و مدیریت آسان تایپوگرافی سایت
- * Version:           2.1
- * Author:            Cadus Pro
- * Author URI:        http://caduspro.net/
+ * Version:           3
+ * Author:            YektaDg
+ * Author URI:        https://yektaDg.ir
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */

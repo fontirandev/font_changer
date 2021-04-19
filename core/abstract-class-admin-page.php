@@ -104,7 +104,7 @@ abstract class WP_Fontiran_Admin_Page {
 			?>
             
 			<div class="footer-love">
-				طراحی و اجرا <span class="dashicons-heart dashicons"></span> کادوس پرو
+				طراحی و اجرا <span class="dashicons-heart dashicons"></span> یکتادیجی
 				
 			</div>
 		</div>
